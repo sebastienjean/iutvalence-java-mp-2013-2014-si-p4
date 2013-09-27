@@ -1,5 +1,5 @@
 package fr.iutvalence.java.mp.hanged;
-
+import java.util.Random; 
 /**
  * define word dictionary
  * @author pascallo
@@ -18,12 +18,16 @@ public class Word
     public static String wordToFind;
     
     /**
-     * search the word to find in the table called tableWord in class Word
+     * get randomly the word to find in the table called tableWord
      * @return String 
      */
     public String getWord()
     {
-        wordToFind = this.tableWord[3];
+        /**
+         * variable r is
+         */
+        Random r = new Random();
+        String wordToFind = this.tableWord[r.nextInt(this.tableWord.length)];
         return wordToFind;
     }
 }

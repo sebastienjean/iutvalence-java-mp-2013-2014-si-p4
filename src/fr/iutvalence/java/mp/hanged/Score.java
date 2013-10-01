@@ -11,5 +11,23 @@ public class Score extends Hanged
     /**
      * score of the player
      */
-    public int score;
+    private int score;
+
+    
+    /**
+     * permit to get the score
+     */
+    public int getScore()
+    {
+        return this.score;
+    }
+
+    /**
+     * permit to set the score
+     * @param score
+     */
+    public void setScore(int score)
+    {
+        this.score = score;
+    }
 }

@@ -24,7 +24,7 @@ public class Word
     public String getWord()
     {
         /**
-         * variable r is
+         * Variable r is
          */
         Random r = new Random();
         String wordToFind = this.tableWord[r.nextInt(this.tableWord.length)];

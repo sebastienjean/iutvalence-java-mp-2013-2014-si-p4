@@ -4,38 +4,48 @@ import java.util.Scanner;
 
 // TODO (fix) fix comment (this is not a second main...)
 /**
- * class which is the second main class named "pendu" which represent the game
+ * classnnamed "pendu" represent the game
  * @author pascallo
  *
  */
-public class Hanged extends BeforeGame
+public class Hanged
 {
+    
     /**
      * Game begining status
      */
-    public boolean begunHanged;
+    private boolean begunHanged;
     
     /**
      * Game termination status
      */
-    public boolean finishedHanged;
+    private boolean finishedHanged;
    
     // TODO (fix) write comment
     /**
      * drawing status
      * @return int
      */
-    public int drawingStatus;
-    
+    private int drawingStatus;
     
     /**
-     * permit to get the score
-     * @return int
+     * Initialize :
+     * - begunHanged;
+     * - begunHanged;
+     * - the score
+     * - the player's alias
+     * - the wordToFind
      */
-    public int getScore()
-    {
-        return score;
+    public void Hanged() {
+        begunHanged = true;
+        finishedHanged = false;
+        Score score1 = new Score();
+        Player player1 = new Player();
+        Word word1 = new Word();
+    
     }
+    
+    
     
 
 

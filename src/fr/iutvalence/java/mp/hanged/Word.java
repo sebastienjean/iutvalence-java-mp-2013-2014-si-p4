@@ -7,32 +7,56 @@ import java.util.Random;
  */
 
 //TODO (think about it) distinguish word and wordLibrary
-public class Word 
-{
-    // TODO (fix) declare visibility
-    // TODO (fix) rename field
+public class Word {
+
+    
+    /*-------------------------------------------------------------
+     *  ATRIBUTES 
+     *-----------------------------------------------------------*/
+    
     /**
-     * Table which contains the list of words
+     * Table which contains a list of words
      */
-    String[] tableWord = {"BONJOUR", "MERCI", "MANGER" , "JOURNEE", "EXTRAORDINAIRE"};
+    private String[] wordLibrary = {"BONJOUR", "MERCI", "MANGER" , "JOURNEE", "EXTRAORDINAIRE"};
     
     /**
      * word to find taken randomly in tableWord
      */
-    // TODO (fix) this feild can not be static
-    public static String wordToFind;
+    private String wordToFind;
     
+    /*-------------------------------------------------------------
+     *  CONSTRUCTORS 
+     *-----------------------------------------------------------*/
+    
+    public Word() {
+        System.out.println("Recherche du mot...");
+        wordToFind = researchWordToFind();
+        System.out.println("Le mot à trouver est : " + wordToFind);
+    }
     /**
      * get randomly the word to find in the table called tableWord
      * @return String 
      */
-    public String getWord()
+   
+    /*-------------------------------------------------------------
+     *  GETTERS 
+     *-----------------------------------------------------------*/
+    
+    public String getWordToFind() {
+        return wordToFind;
+    }
+    
+    /*-------------------------------------------------------------
+     *  OTHERS METHODS 
+     *-----------------------------------------------------------*/
+    
+    public String researchWordToFind()
     {
         /**
          * Variable r is
          */
         Random r = new Random();
-        String wordToFind = this.tableWord[r.nextInt(this.tableWord.length)];
+        wordToFind = wordLibrary[r.nextInt(5)];
         return wordToFind;
     }
 }

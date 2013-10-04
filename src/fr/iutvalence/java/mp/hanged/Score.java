@@ -6,16 +6,39 @@ package fr.iutvalence.java.mp.hanged;
  * @author pascallo
  *
  */
-//TODO (fix) Is score really a hanged ?
-public class Score extends Hanged
+
+public class Score
 {
+    /*-------------------------------------------------------------
+     *  ATRIBUTES 
+     *-----------------------------------------------------------*/
     
-    // TODO (fix) initialize fields only in constructors
     /**
      * score of the player
      */
-    private int score = 1000;
+    private int score;
 
+    /*-------------------------------------------------------------
+     *  CONSTRUCTORS 
+     *-----------------------------------------------------------*/
+    
+    // Default constructor
+    public Score() {
+        System.out.println("Création du score...");
+        score = 1000;
+        System.out.println("Le score vaut : " + score);
+    }
+    
+    // Constructor with parameters
+    public Score(int pScore) {
+        System.out.println("Création du score...");
+        score = pScore;
+        System.out.println("Le score vaut : " + score);
+    }
+    
+    /*-------------------------------------------------------------
+     *  GETTERS 
+     *-----------------------------------------------------------*/
     
     /**
      * permit to get the score
@@ -25,20 +48,27 @@ public class Score extends Hanged
         return this.score;
     }
 
+    /*-------------------------------------------------------------
+     *  SETTERS 
+     *-----------------------------------------------------------*/
+    
     /**
      * permit to set the score
      * @param score
      */
-    public void setScore(int score)
+    public void setScore(int pScore)
     {
         this.score = score;
     }
     
+    /*-------------------------------------------------------------
+     *  OTHERS METHODS 
+     *-----------------------------------------------------------*/
+    
     /**
-     * permit to decrement the initial score
+     * permit to decrement the initial score according to the errorNumber
      * @param errorNumber
      */
-    
     public void scoreCounter(int errorNumber){
         switch (errorNumber)
         {

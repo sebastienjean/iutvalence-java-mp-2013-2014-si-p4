@@ -15,6 +15,8 @@ public class BeforeGame
     /**
      * method which permit to get the alias of the player
      */
+    
+    // TODO (fix) comply with naming conventions
     public void GetName()
     {
         /**

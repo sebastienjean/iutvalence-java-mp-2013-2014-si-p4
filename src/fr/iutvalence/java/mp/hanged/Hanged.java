@@ -20,6 +20,7 @@ public class Hanged extends BeforeGame
      */
     public boolean finishedHanged;
    
+    // TODO (fix) write comment
     /**
      * drawing status
      * @return int

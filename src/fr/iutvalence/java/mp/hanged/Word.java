@@ -5,16 +5,21 @@ import java.util.Random;
  * @author pascallo
  *
  */
+
+//TODO (think about it) distinguish word and wordLibrary
 public class Word 
 {
+    // TODO (fix) declare visibility
+    // TODO (fix) rename field
     /**
-     * Tbale which contains the list of words
+     * Table which contains the list of words
      */
-    String tableWord[] = {"BONJOUR", "MERCI", "MANGER" , "JOURNEE", "EXTRAORDINAIRE"};
+    String[] tableWord = {"BONJOUR", "MERCI", "MANGER" , "JOURNEE", "EXTRAORDINAIRE"};
     
     /**
      * word to find taken randomly in tableWord
      */
+    // TODO (fix) this feild can not be static
     public static String wordToFind;
     
     /**

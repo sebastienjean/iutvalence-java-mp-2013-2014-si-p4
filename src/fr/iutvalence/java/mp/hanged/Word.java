@@ -6,7 +6,7 @@ import java.util.Random;
  *
  */
 
-//TODO (think about it) distinguish word and wordLibrary
+// TODO (fix) separate declarations of what is a word and what is a wordLibrary
 public class Word {
 
     

@@ -2,7 +2,6 @@ package fr.iutvalence.java.mp.hanged;
 
 import java.util.Scanner;
 
-// TODO (fix) fix comment (this is not a second main...)
 /**
  * classnnamed "pendu" represent the game
  * @author pascallo

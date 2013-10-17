@@ -22,6 +22,8 @@ public class Player
      *-----------------------------------------------------------*/
     
     public Player() {
+        
+        // TODO (fix) remove console outputs
         System.out.println("Création d'un joueur...");
         alias = "BoobaToNight";
         System.out.println("Votre pseudo est : " + alias + " !");

@@ -24,6 +24,7 @@ public class Score
     
     // Default constructor
     public Score() {
+        // TODO (fix) remove console outputs
         System.out.println("Création du score...");
         score = 1000;
         System.out.println("Le score vaut : " + score);

@@ -5,8 +5,6 @@ import java.util.Random;
  * @author pascallo
  *
  */
-
-// TODO (fix) separate declarations of what is a word and what is a wordLibrary
 public class WordLibrary {
 
     
@@ -19,6 +17,7 @@ public class WordLibrary {
      */
     private String[] wordLibrary = {"BONJOUR", "MERCI", "MANGER" , "JOURNEE", "EXTRAORDINAIRE"};
     
+    // TODO (fix) this field is useless
     /**
      * word to find taken randomly in tableWord
      */
@@ -45,6 +44,7 @@ public class WordLibrary {
      *  GETTERS 
      *-----------------------------------------------------------*/
     
+    // TODO (fix) this method is useless
     public String getWordToFind() {
         return this.wordToFind;
     }

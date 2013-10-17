@@ -1,5 +1,6 @@
 package fr.iutvalence.java.mp.hanged;
 
+// TODO (fix) this class is useless, it is not part of the model but of a particular HMI
 public class Rules
 {
     /**

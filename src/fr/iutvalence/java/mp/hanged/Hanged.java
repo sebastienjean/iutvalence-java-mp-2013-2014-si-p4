@@ -58,10 +58,4 @@ public class Hanged
         
         
     }
-    
-    
-    
-    
-
-
 }

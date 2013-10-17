@@ -1,7 +1,5 @@
 package fr.iutvalence.java.mp.hanged;
 
-import java.util.Scanner;
-
 /**
  * classnnamed "pendu" represent the game
  * @author pascallo
@@ -23,9 +21,28 @@ public class Hanged
     // TODO (fix) write comment
     /**
      * drawing status
-     * @return int
      */
     private int drawingStatus;
+    
+    /**
+     * score of the player
+     */
+    private int score;
+    
+    /**
+     * Player's alias typed at the begining of the game
+     */
+    private String alias;
+    
+    /**
+     * word to find taken randomly in tableWord
+     */
+    private String wordToFind;
+    
+    /**
+     * This is the rules of the game which is printed at the begining of the game
+     */
+    private String rules;
     
     /**
      * Initialize :
@@ -38,11 +55,10 @@ public class Hanged
     public void Hanged() {
         begunHanged = true;
         finishedHanged = false;
-        Score score1 = new Score();
-        Player player1 = new Player();
-        Word word1 = new Word();
-    
+        
+        
     }
+    
     
     
     

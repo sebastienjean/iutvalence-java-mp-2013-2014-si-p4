@@ -23,18 +23,25 @@ public class Score
      *-----------------------------------------------------------*/
     
     // Default constructor
+    /**
+     * Constructors which set the score at 1000
+     */
     public Score() {
         // TODO (fix) remove console outputs
         System.out.println("Création du score...");
-        score = 1000;
-        System.out.println("Le score vaut : " + score);
+        this.score = 1000;
+        System.out.println("Le score vaut : " + this.score);
     }
     
     // Constructor with parameters
+    /**
+     * Constructor which set the score with parameter
+     * @param pScore int
+     */
     public Score(int pScore) {
-        System.out.println("Création du score...");
-        score = pScore;
-        System.out.println("Le score vaut : " + score);
+        System.out.println("Création du score (avec paramètres...");
+        this.score = pScore;
+        System.out.println("Le score vaut : " + this.score);
     }
     
     /*-------------------------------------------------------------
@@ -43,6 +50,7 @@ public class Score
     
     /**
      * permit to get the score
+     * @return score
      */
     public int getScore()
     {
@@ -55,11 +63,11 @@ public class Score
     
     /**
      * permit to set the score
-     * @param score
+     * @param pScore int
      */
     public void setScore(int pScore)
     {
-        this.score = score;
+        this.score = pScore;
     }
     
     /*-------------------------------------------------------------
@@ -68,7 +76,7 @@ public class Score
     
     /**
      * permit to decrement the initial score according to the errorNumber
-     * @param errorNumber
+     * @param errorNumber number of error
      */
     public void scoreCounter(int errorNumber){
         switch (errorNumber)

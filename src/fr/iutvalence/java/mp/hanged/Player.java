@@ -1,5 +1,4 @@
 package fr.iutvalence.java.mp.hanged;
-import java.util.Scanner;
 /**
  * class Player which represent the player's identity
  * (alias
@@ -21,20 +20,27 @@ public class Player
      *  CONSTRUCTORS 
      *-----------------------------------------------------------*/
     
+    /**
+     * Mathod which create the player
+     */
     public Player() {
         
         // TODO (fix) remove console outputs
         System.out.println("Création d'un joueur...");
-        alias = "BoobaToNight";
-        System.out.println("Votre pseudo est : " + alias + " !");
+        this.alias = "BoobaToNight";
+        System.out.println("Votre pseudo est : " + this.alias + " !");
     }
     
     /*-------------------------------------------------------------
      *  GETTERS 
      *-----------------------------------------------------------*/
     
+    /**
+     * Method which return the player's alias
+     * @return alias String
+     */
     public String getAlias() {
-        return alias;
+        return this.alias;
     }
     
 

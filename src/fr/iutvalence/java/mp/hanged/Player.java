@@ -1,4 +1,7 @@
 package fr.iutvalence.java.mp.hanged;
+
+import java.util.Random;
+
 /**
  * class Player which represent the player's identity
  * (alias
@@ -16,19 +19,21 @@ public class Player
      */
     private String alias;
     
+    /**
+     * This is the table of the possible alias of the gamer
+     */
+    private String[] aliasLibrary = {"Booba-To-night", "PascalloLeHaricot", "CourbisLePastis" , "AndreLePathé", "JackiLeKiwi", "AugagneaLeCobra"};
     /*-------------------------------------------------------------
      *  CONSTRUCTORS 
      *-----------------------------------------------------------*/
     
     /**
-     * Mathod which create the player
+     * Method which create the player
      */
-    public Player() {
-        
-        // TODO (fix) remove console outputs
-        System.out.println("Création d'un joueur...");
-        this.alias = "BoobaToNight";
-        System.out.println("Votre pseudo est : " + this.alias + " !");
+    public Player() { 
+        // TODO (fix) remove console output
+        Random r = new Random();
+        this.alias = this.aliasLibrary[r.nextInt(6)];
     }
     
     /*-------------------------------------------------------------

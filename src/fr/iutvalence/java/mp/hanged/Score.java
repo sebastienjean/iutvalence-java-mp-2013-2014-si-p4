@@ -24,13 +24,11 @@ public class Score
     
     // Default constructor
     /**
-     * Constructors which set the score at 1000
+     * Constructors which set the score at 100
      */
     public Score() {
         // TODO (fix) remove console outputs
-        System.out.println("Création du score...");
-        this.score = 1000;
-        System.out.println("Le score vaut : " + this.score);
+        this.score = 100;
     }
     
     // Constructor with parameters
@@ -39,9 +37,7 @@ public class Score
      * @param pScore int
      */
     public Score(int pScore) {
-        System.out.println("Création du score (avec paramètres...");
         this.score = pScore;
-        System.out.println("Le score vaut : " + this.score);
     }
     
     /*-------------------------------------------------------------
@@ -94,35 +90,19 @@ public class Score
                 break;
       
             case 3:
-                this.score -= 50;
+                this.score -= 40;
                 break;
       
             case 4:
-                this.score -= 75;
+                this.score -= 60;
                 break;
       
             case 5:
-                this.score -= 100;
+                this.score -= 75;
                 break;
       
             case 6:
-                this.score -= 150;
-                break;
-               
-            case 7:
-                this.score -= 200;
-                break;
-                
-            case 8:
-                this.score -= 250;
-                break;
-
-            case 9:
-                this.score -= 500;
-                break;
-
-            case 10:
-                this.score -= 1000;
+                this.score -= 100;
                 break;
 
             default:

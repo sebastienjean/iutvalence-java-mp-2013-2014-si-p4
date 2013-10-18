@@ -31,9 +31,7 @@ public class WordLibrary {
      * Method which reasearch the word to find
      */
     public WordLibrary() {
-        System.out.println("Recherche du mot...");
-        this.wordToFind = researchWordToFind();
-        System.out.println("Le mot à trouver est : " + this.wordToFind);
+         this.wordToFind = researchWordToFind();
     }
     /**
      * get the word to find in the table called tableWord
@@ -43,12 +41,7 @@ public class WordLibrary {
     /*-------------------------------------------------------------
      *  GETTERS 
      *-----------------------------------------------------------*/
-    
-    // TODO (fix) this method is useless
-    public String getWordToFind() {
-        return this.wordToFind;
-    }
-    
+
     /*-------------------------------------------------------------
      *  OTHERS METHODS 
      *-----------------------------------------------------------*/

@@ -17,15 +17,12 @@ public class BeforeGame
      */
     
     // TODO (fix) comply with naming conventions
-    public void GetName()
+    public String GetName()
     {
         /**
          * getting the player's alias
          */
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Veuillez saisir votre pseudo :");
-        String alias = sc.nextLine();
-        this.alias = alias;
+        return alias;
     }
     
     /**

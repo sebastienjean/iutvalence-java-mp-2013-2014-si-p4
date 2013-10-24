@@ -1,18 +1,20 @@
 package fr.iutvalence.java.mp.hanged;
 
-
 /**
  * permit to return and save the score
+ * 
  * @author pascallo
- *
+ * 
  */
-
+// TODO (think about it) this class does not seem to be very useful.
+// you can just move the declaration of the int field and the method deciding how
+// the score evolves to Hanged 
 public class Score
 {
     /*-------------------------------------------------------------
      *  ATRIBUTES 
      *-----------------------------------------------------------*/
-    
+
     /**
      * score of the player
      */
@@ -21,31 +23,36 @@ public class Score
     /*-------------------------------------------------------------
      *  CONSTRUCTORS 
      *-----------------------------------------------------------*/
-    
+
     // Default constructor
     /**
      * Constructors which set the score at 100
      */
-    public Score() {
+    public Score()
+    {
         // TODO (fix) remove console outputs
         this.score = 100;
     }
-    
+
     // Constructor with parameters
     /**
      * Constructor which set the score with parameter
-     * @param pScore int
+     * 
+     * @param pScore
+     *            int
      */
-    public Score(int pScore) {
+    public Score(int pScore)
+    {
         this.score = pScore;
     }
-    
+
     /*-------------------------------------------------------------
      *  GETTERS 
      *-----------------------------------------------------------*/
-    
+
     /**
      * permit to get the score
+     * 
      * @return score
      */
     public int getScore()
@@ -56,57 +63,62 @@ public class Score
     /*-------------------------------------------------------------
      *  SETTERS 
      *-----------------------------------------------------------*/
-    
+
     /**
      * permit to set the score
-     * @param pScore int
+     * 
+     * @param pScore
+     *            int
      */
     public void setScore(int pScore)
     {
         this.score = pScore;
     }
-    
+
     /*-------------------------------------------------------------
      *  OTHERS METHODS 
      *-----------------------------------------------------------*/
-    
+
     /**
      * permit to decrement the initial score according to the errorNumber
-     * @param errorNumber number of error
+     * 
+     * @param errorNumber
+     *            number of error
      */
-    public void scoreCounter(int errorNumber){
+    public void scoreCounter(int errorNumber)
+    {
         switch (errorNumber)
         {
-            case 0:
-                this.score -= 0;
-                break;
-     
-            case 1:
-                this.score -= 10;
-                break;
-      
-            case 2:
-                this.score -= 25;
-                break;
-      
-            case 3:
-                this.score -= 40;
-                break;
-      
-            case 4:
-                this.score -= 60;
-                break;
-      
-            case 5:
-                this.score -= 75;
-                break;
-      
-            case 6:
-                this.score -= 100;
-                break;
+        case 0:
+            this.score -= 0;
+            break;
 
-            default:
-                this.score -= 0;
+        case 1:
+            this.score -= 10;
+            break;
+
+        case 2:
+            this.score -= 25;
+            break;
+
+        case 3:
+            this.score -= 40;
+            break;
+
+        case 4:
+            this.score -= 60;
+            break;
+
+        case 5:
+            this.score -= 75;
+            break;
+
+        case 6:
+            this.score -= 100;
+            break;
+
+        default:
+            this.score -= 0;
 
         }
 

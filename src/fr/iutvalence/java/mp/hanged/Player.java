@@ -21,11 +21,7 @@ public class Player
 
     // TODO (fix) why an aliasTable is required? Consider that an alias is associated
     // to the player while creating it
-    /**
-     * This is the table of the possible alias of the gamer
-     */
-    private String[] aliasLibrary = { "Booba-To-night", "PascalloLeHaricot", "CourbisLePastis", "AndreLePathé",
-            "JackiLeKiwi", "AugagneaLeCobra" };
+  
 
     /*-------------------------------------------------------------
      *  CONSTRUCTORS 
@@ -36,8 +32,7 @@ public class Player
      */
     public Player()
     {
-        Random r = new Random();
-        this.alias = this.aliasLibrary[r.nextInt(6)];
+        this.alias = "BoobaToNight";
     }
 
     /*-------------------------------------------------------------

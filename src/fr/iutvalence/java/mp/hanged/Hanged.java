@@ -43,10 +43,16 @@ public class Hanged
     private String wordToFind;
 
     // TODO (think about it) local variable or field? Ask yourself if it is
-    // part of the game state.
+    // part of the game state
+    /**
+     * Letter chosen by the player
+     */
     private static char letter;
 
     // TODO (fix) write a comment
+    /**
+     * This is the initialization of the secret word
+     */
     private String hiddenWord = "";
 
     /**
@@ -80,6 +86,9 @@ public class Hanged
         this.score = 100;
     }
 
+    /**
+     * Constructor
+     */
     public void play()
     {
         while (this.finishedHanged == false)
@@ -161,6 +170,10 @@ public class Hanged
 
     }
 
+    /**
+     * Method which return true if the hanged is finished
+     * @return boolean
+     */
     public boolean finishedHanged()
     {
 

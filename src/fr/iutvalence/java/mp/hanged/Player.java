@@ -19,9 +19,9 @@ public class Player
      */
     private String alias;
 
-    // TODO (fix) why an aliasTable is required? Consider that an alias is associated
+    // TODO (fix) why an aliasTable is required? Consider that an alias is
+    // associated
     // to the player while creating it
-  
 
     /*-------------------------------------------------------------
      *  CONSTRUCTORS 

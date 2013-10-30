@@ -3,7 +3,7 @@ package fr.iutvalence.java.mp.hanged;
 import java.util.Random;
 
 /**
- * class named "pendu" represent the game
+ * Represents a "Hanged" game
  * 
  * @author pascallo
  * 
@@ -172,6 +172,7 @@ public class Hanged
 
     /**
      * Method which return true if the hanged is finished
+     * 
      * @return boolean
      */
     public boolean finishedHanged()

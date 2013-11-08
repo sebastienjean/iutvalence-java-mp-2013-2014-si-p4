@@ -11,22 +11,17 @@ import java.util.Random;
 public class Hanged
 {
 
-    // TODO (fix) these two followings fields are local variables
-    /**
-     * Game beginning status
-     */
-    private static boolean begunHanged;
-
-    /**
-     * Game termination status
-     */
-    private static boolean finishedHanged;
 
     // TODO (fix) rewrite comment (it is not understandable)
     /**
-     * drawing status : 6 => the rope is drawn 5 => the head is drawn 4 => the
-     * trunk is drawn 3 => an arm is drawn 2 => the two arms are drawn 1 => a
-     * leg is drawn 0 => the hanged is HANGED !
+     * drawing status : (the hanged)
+     * 6 => the rope is drawn 
+     * 5 => the head is drawn 
+     * 4 => the trunk is drawn 
+     * 3 => an arm is drawn 
+     * 2 => the two arms are drawn 
+     * 1 => a leg is drawn 
+     * 0 => the hanged is HANGED !
      */
     private static int drawingStatus = 6;
 
@@ -42,18 +37,11 @@ public class Hanged
      */
     private String wordToFind;
 
-    // TODO (think about it) local variable or field? Ask yourself if it is
-    // part of the game state
-    /**
-     * Letter chosen by the player
-     */
-    private static char letter;
-
     // TODO (fix) write a comment
     /**
-     * This is the initialization of the secret word
+     * This is the initialization of the hidden word (table of character which compose the hidden word)
      */
-    private String hiddenWord = "";
+    private static char hiddenWord [];
 
     /**
      * Initialize : - begunHanged; - finishedHanged; - the score - the player's
@@ -61,26 +49,27 @@ public class Hanged
      */
     public Hanged()
     {
-        this.begunHanged = true;
-        this.finishedHanged = false;
+        boolean begunHanged = true;
+        boolean finishedHanged = false;
+
 
         // Creation of the player
-        System.out.println("Création d'un joueur...");
+        System.out.println("   Création d'un joueur...");
         Player alias = new Player();
         System.out.println("\t -->Le pseudo du joueur est " + alias.getAlias() + " !");
         System.out.println();
 
         // Creation of initial player's score
-        System.out.println("Création du score...");
+        System.out.println("   Création du score...");
         this.score = 100;
         System.out.println("\t -->Le score du joueur est de " + this.score + " !");
         System.out.println();
 
         // Initialization of the wordToFind
-        System.out.println("Recherche du mot...");
+        System.out.println("   Recherche du mot...");
         Word wordToFind = new Word();
         this.wordToFind = wordToFind.getWordToFind();
-        System.out.println("\t -->Le mot à trouver est : " + this.wordToFind + " !");
+        System.out.println("\t --> Le mot à trouver est : " + this.wordToFind + " !");
 
         // Initialization of the score
         this.score = 100;
@@ -91,38 +80,48 @@ public class Hanged
      */
     public void play()
     {
-        while (this.finishedHanged == false)
+        boolean finishedHanged = false;
+        char letter;
+        while (finishedHanged == false)
         {
+            System.out.println("Le mot caché est : ");
             // Initialization of the secret word
             for (int i = 0; i < this.wordToFind.length(); i++)
             {
-                this.hiddenWord = this.hiddenWord + "_ ";
+                this.hiddenWord[i] = '_';
+                System.out.print(this.hiddenWord[i] + " ");
             }
-            System.out.println("Le mot caché est : " + this.hiddenWord + "\n");
+            while(this.drawingStatus != 0){
 
-            // while(this.drawingStatus != 0)
-            Random r = new Random();
-            this.letter = (char) ('A' + r.nextInt(25));
 
-            for (int i = 0; i < this.wordToFind.length(); i++)
-            {
-                if (this.letter == this.wordToFind.charAt(i))
+                Random r = new Random();
+                letter = (char) ('A' + r.nextInt(25));
+
+                for (int i = 0; i < this.wordToFind.length(); i++)
                 {
-                    // replace the '_' by the letter
-                    System.out.println("Bien joué vous avez trouvé la lettre " + this.letter + " !");
-                    // replace(oldChar, newChar)
-                    this.hiddenWord = this.hiddenWord.replace(this.hiddenWord.charAt(i * 2), this.letter);
-                    System.out.println(this.hiddenWord);
+                    if (letter == this.wordToFind.charAt(i))
+                    {
+                        if(letter == this.hiddenWord[i]){
+                            System.out.println("Vous avez déjà trouvé cette lettre !");
+                        }
+                        else{
+                            System.out.println("vous avez trouver la lettre : " + letter);
+                            this.hiddenWord[i] = letter;
+                        }
+                    }
+                    else
+                    {
+                        drawingStatus = drawingStatus - 1;
+                    }
                 }
-                else
-                {
-                    drawingStatus = drawingStatus - 1;
+                System.out.println("Le mot est devenu : ");
+                for (int i = 0; i < this.wordToFind.length(); i++){
+                    System.out.println(this.hiddenWord[i]);
                 }
-
+                finishedHanged = true;
             }
-
         }
-        finishedHanged = true;
+
     }
 
     /**
@@ -180,7 +179,7 @@ public class Hanged
 
         for (int i = 0; i < this.wordToFind.length(); i++)
         {
-            if (this.letter == '_')
+            if (this.wordToFind.charAt(i) == '_')
                 return false;
         }
         return true;

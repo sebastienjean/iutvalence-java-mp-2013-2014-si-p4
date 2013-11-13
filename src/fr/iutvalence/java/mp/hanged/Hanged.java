@@ -23,6 +23,8 @@ public class Hanged
      * 1 => a leg is drawn 
      * 0 => the hanged is HANGED !
      */
+    // TODO (fix) what is this?
+    // TODO (fix) this field is not static (you must understand why)
     private static int drawingStatus = 6;
 
     /**
@@ -30,18 +32,16 @@ public class Hanged
      */
     private int score;
 
-    // TODO (fix) the two following fields are very similar, are they
-    // duplicates?
     /**
      * word to find taken randomly in tableWord
      */
     private String wordToFind;
 
-    // TODO (fix) write a comment
     /**
      * This is the initialization of the hidden word (table of character which compose the hidden word)
      */
-    private static char hiddenWord [];
+    // TODO (fix) this field is not static (you must understand why)
+    private static char[] hiddenWord ;
 
     /**
      * Initialize : - begunHanged; - finishedHanged; - the score - the player's
@@ -74,7 +74,7 @@ public class Hanged
         // Initialization of the score
         this.score = 100;
     }
-
+    // TODO (fix) rewrite comment (this is not a constructor)
     /**
      * Constructor
      */
@@ -123,7 +123,8 @@ public class Hanged
         }
 
     }
-
+    
+    // TODO (fix) this method should be private
     /**
      * permit to decrement the initial score according to the errorNumber
      * 
@@ -169,6 +170,7 @@ public class Hanged
 
     }
 
+    // TODO (fix) this method should be private
     /**
      * Method which return true if the hanged is finished
      * 

@@ -1,6 +1,5 @@
 package fr.iutvalence.java.mp.hanged;
 
-import java.util.Random;
 
 /**
  * class Player which represent the player's identity (alias
@@ -19,9 +18,6 @@ public class Player
      */
     private String alias;
 
-    // TODO (fix) why an aliasTable is required? Consider that an alias is
-    // associated
-    // to the player while creating it
 
     /*-------------------------------------------------------------
      *  CONSTRUCTORS 

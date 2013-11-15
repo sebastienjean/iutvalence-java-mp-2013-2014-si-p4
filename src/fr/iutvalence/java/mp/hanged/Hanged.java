@@ -84,6 +84,8 @@ public class Hanged
         char letter;
         while (finishedHanged == false)
         {
+            
+            
             System.out.println("Le mot caché est : ");
             // Initialization of the secret word
             for (int i = 0; i < this.wordToFind.length(); i++)
@@ -91,9 +93,10 @@ public class Hanged
                 this.hiddenWord[i] = '_';
                 System.out.print(this.hiddenWord[i] + " ");
             }
+            
+            
+            
             while(this.drawingStatus != 0){
-
-
                 Random r = new Random();
                 letter = (char) ('A' + r.nextInt(25));
 

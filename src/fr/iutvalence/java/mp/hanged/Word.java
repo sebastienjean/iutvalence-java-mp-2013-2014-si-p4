@@ -36,14 +36,9 @@ public class Word
     public Word()
     {
         Random r = new Random();
+      
         this.wordToFind = this.wordLibrary[r.nextInt(5)];
     }
-
-    /**
-     * get the word to find in the table called tableWord
-     * 
-     * @return String
-     */
 
     /*-------------------------------------------------------------
      *  GETTERS 
@@ -56,6 +51,8 @@ public class Word
      */
     public String getWordToFind()
     {
+        // TODO (fix) this method should return a word randomly
+        // taken from the dictionary
         return this.wordToFind;
     }
 

@@ -13,25 +13,27 @@ public class Hanged
 
 
     // TODO (fix) rewrite comment (it is not understandable)
-    /**
-     * drawing status : (the hanged)
-     * 6 => the rope is drawn 
-     * 5 => the head is drawn 
-     * 4 => the trunk is drawn 
-     * 3 => an arm is drawn 
-     * 2 => the two arms are drawn 
-     * 1 => a leg is drawn 
-     * 0 => the hanged is HANGED !
-     */
+
     // TODO (fix) what is this?
     // TODO (fix) this field is not static (you must understand why)
-    private static int drawingStatus = 6;
 
     /**
      * score of the player
      */
     private int score;
 
+    /**
+     * boolean which indicates if the galme is finished
+     */
+    boolean finishedHanged;
+    /**
+     * This is the hidden word
+     */
+    char hiddenWord[];
+    /**
+     * This is the number of error
+     */
+    int errorNumber;
     /**
      * word to find taken randomly in tableWord
      */
@@ -41,7 +43,7 @@ public class Hanged
      * This is the initialization of the hidden word (table of character which compose the hidden word)
      */
     // TODO (fix) this field is not static (you must understand why)
-    private static char[] hiddenWord ;
+
 
     /**
      * Initialize : - begunHanged; - finishedHanged; - the score - the player's
@@ -49,10 +51,6 @@ public class Hanged
      */
     public Hanged()
     {
-        boolean begunHanged = true;
-        boolean finishedHanged = false;
-
-
         // Creation of the player
         System.out.println("   Création d'un joueur...");
         Player alias = new Player();
@@ -67,12 +65,8 @@ public class Hanged
 
         // Initialization of the wordToFind
         System.out.println("   Recherche du mot...");
-        Word wordToFind = new Word();
-        this.wordToFind = wordToFind.getWordToFind();
+        this.wordToFind =  new WordLibrary().getWordToFind();
         System.out.println("\t --> Le mot à trouver est : " + this.wordToFind + " !");
-
-        // Initialization of the score
-        this.score = 100;
     }
     // TODO (fix) rewrite comment (this is not a constructor)
     /**
@@ -82,50 +76,77 @@ public class Hanged
     {
         boolean finishedHanged = false;
         char letter;
-        while (finishedHanged == false)
+        Random r = new Random();
+        /**
+         * drawing status : (the hanged)
+         * 6 => the rope is drawn 
+         * 5 => the head is drawn 
+         * 4 => the trunk is drawn 
+         * 3 => an arm is drawn 
+         * 2 => the two arms are drawn 
+         * 1 => a leg is drawn 
+         * 0 => the hanged is HANGED !
+         */
+        int errorNumber = 0;
+        boolean typedLetter = false;
+        System.out.print("Le mot caché est : ");
+        // Initialization of the secret word
+        char[] hiddenWord = new char[this.wordToFind.length()];
+        for (int i = 0; i < this.wordToFind.length(); i++)
         {
-            
-            
-            System.out.println("Le mot caché est : ");
-            // Initialization of the secret word
+            hiddenWord[i] = '_';
+            System.out.print(hiddenWord[i] + " ");
+        }
+        System.out.println("");
+
+
+        while(finishedHanged == false){
+
+            letter = (char) ('A' + r.nextInt(26));
+
+            System.out.println("La lettre proposee est : "+letter);
             for (int i = 0; i < this.wordToFind.length(); i++)
             {
-                this.hiddenWord[i] = '_';
-                System.out.print(this.hiddenWord[i] + " ");
-            }
-            
-            
-            
-            while(this.drawingStatus != 0){
-                Random r = new Random();
-                letter = (char) ('A' + r.nextInt(25));
-
-                for (int i = 0; i < this.wordToFind.length(); i++)
+                if (letter == this.wordToFind.charAt(i))
                 {
-                    if (letter == this.wordToFind.charAt(i))
-                    {
-                        if(letter == this.hiddenWord[i]){
-                            System.out.println("Vous avez déjà trouvé cette lettre !");
-                        }
-                        else{
-                            System.out.println("vous avez trouver la lettre : " + letter);
-                            this.hiddenWord[i] = letter;
-                        }
-                    }
-                    else
-                    {
-                        drawingStatus = drawingStatus - 1;
-                    }
+                    typedLetter = true;
+                    hiddenWord[i] = letter;
                 }
-                System.out.println("Le mot est devenu : ");
-                for (int i = 0; i < this.wordToFind.length(); i++){
-                    System.out.println(this.hiddenWord[i]);
-                }
-                finishedHanged = true;
             }
+            if ( typedLetter == false ) {
+                errorNumber++;
+                System.out.println("Vous avez fait " + errorNumber + " erreurs");
+                //System.out.println(hiddenWord[i]);
+                if (errorNumber >= 10) {
+                    System.out.println( "Vous avez perdu ! Le mot à trouver était: " + this.wordToFind); // Le joueur a perdu, on lui donne le mot qu'il devait deviner
+                    return;
+                }
+            }
+            typedLetter = false;
+            //verifier();
         }
-
     }
+
+            /**
+             * Checking if the word is found
+             */
+
+public void verifier(){
+            this.finishedHanged = true;
+            for( int j = 0; j< this.wordToFind.length() ; j++){
+                if (this.hiddenWord[j] == '_') {
+                    this.finishedHanged = false;
+                }
+            }
+            if (this.finishedHanged == true){
+                System.out.println("Vous avez gagné");
+            }
+            for( int j = 0; j< this.wordToFind.length() ; j++){
+                System.out.print(this.hiddenWord[j]);
+            }
+            System.out.print("\n");
+}
+    
     
     // TODO (fix) this method should be private
     /**
@@ -133,8 +154,9 @@ public class Hanged
      * 
      * @param errorNumber
      *            number of error
+     * @return score
      */
-    public void scoreCounter(int errorNumber)
+    private int scoreCounter(int errorNumber)
     {
         switch (errorNumber)
         {
@@ -168,26 +190,7 @@ public class Hanged
 
         default:
             this.score -= 0;
-
         }
-
+        return this.score;
     }
-
-    // TODO (fix) this method should be private
-    /**
-     * Method which return true if the hanged is finished
-     * 
-     * @return boolean
-     */
-    public boolean finishedHanged()
-    {
-
-        for (int i = 0; i < this.wordToFind.length(); i++)
-        {
-            if (this.wordToFind.charAt(i) == '_')
-                return false;
-        }
-        return true;
-    }
-
 }

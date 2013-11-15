@@ -8,7 +8,7 @@ import java.util.Random;
  * @author pascallo
  * 
  */
-public class Word
+public class WordLibrary
 {
 
     /*-------------------------------------------------------------
@@ -33,7 +33,7 @@ public class Word
     /**
      * Method which reasearch the word to find
      */
-    public Word()
+    public WordLibrary()
     {
         Random r = new Random();
       
@@ -55,16 +55,4 @@ public class Word
         // taken from the dictionary
         return this.wordToFind;
     }
-
-    // public boolean tryCaracter(){
-    // System.out.print("Saisissez une lettre : ");
-    // Scanner sc = new Scaner(System.in);
-    // char typedCaracter = sc.nextLine().charAt(0);
-    // for ( i=0; i< wordToFind.length(); i++){
-    // if (typedCaracter == wordToFind.charAt(i))
-    // return true;
-    // else
-    // return false;
-    // }
-    // }
 }

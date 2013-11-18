@@ -102,16 +102,30 @@ public class Hanged
 
         while(finishedHanged == false){
 
+            char tabLetter[] = {'_','_','_','_','_','_','_','_','_','_'};
             letter = (char) ('A' + r.nextInt(26));
-
+            boolean foundLetter = false;
+            for (int t=0; t<tabLetter.length; t++)
+            {
+                while (letter==tabLetter[t]){
+                    letter = (char) ('A' + r.nextInt(26));
+                }
+                //tabLetter[sdfgvb]=letter;
+            }
+           
+            //Insertion des lettres dans un tableau
+            
+            
+            
             System.out.println("La lettre proposee est : "+letter);
             for (int i = 0; i < this.wordToFind.length(); i++)
             {
                 if (letter == this.wordToFind.charAt(i))
                 {
                     typedLetter = true;
-                    hiddenWord[i] = letter;
+                    hiddenWord[i] = letter; 
                 }
+                
             }
             if ( typedLetter == false ) {
                 errorNumber++;
@@ -122,32 +136,37 @@ public class Hanged
                     return;
                 }
             }
+            for (int l = 0; l < this.wordToFind.length(); l++)
+            {
+                System.out.print(hiddenWord[l] + " ");
+            }
+            System.out.println();
             typedLetter = false;
             //verifier();
         }
     }
 
-            /**
-             * Checking if the word is found
-             */
+    /**
+     * Checking if the word is found
+     */
 
-public void verifier(){
-            this.finishedHanged = true;
-            for( int j = 0; j< this.wordToFind.length() ; j++){
-                if (this.hiddenWord[j] == '_') {
-                    this.finishedHanged = false;
-                }
+    public void verifier(){
+        this.finishedHanged = true;
+        for( int j = 0; j< this.wordToFind.length() ; j++){
+            if (this.hiddenWord[j] == '_') {
+                this.finishedHanged = false;
             }
-            if (this.finishedHanged == true){
-                System.out.println("Vous avez gagné");
-            }
-            for( int j = 0; j< this.wordToFind.length() ; j++){
-                System.out.print(this.hiddenWord[j]);
-            }
-            System.out.print("\n");
-}
-    
-    
+        }
+        if (this.finishedHanged == true){
+            System.out.println("Vous avez gagné");
+        }
+        for( int j = 0; j< this.wordToFind.length() ; j++){
+            System.out.print(this.hiddenWord[j]);
+        }
+        System.out.print("\n");
+    }
+
+
     // TODO (fix) this method should be private
     /**
      * permit to decrement the initial score according to the errorNumber

@@ -14,7 +14,7 @@ public class Player
      *-----------------------------------------------------------*/
 
     /**
-     * Player's alias typed at the begining of the game
+     * Player's alias typed at the beginning of the game
      */
     private String alias;
 

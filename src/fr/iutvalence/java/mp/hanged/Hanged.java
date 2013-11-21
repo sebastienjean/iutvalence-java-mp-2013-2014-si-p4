@@ -25,25 +25,26 @@ public class Hanged
     /**
      * boolean which indicates if the galme is finished
      */
+    // TODO (fix) this fields should be declared private
     boolean finishedHanged;
+
     /**
      * This is the hidden word
      */
+    // TODO (fix) this fields should be declared private
     char hiddenWord[];
+    
     /**
      * This is the number of error
      */
+    // TODO (fix) this fields should be declared private
     int errorNumber;
+    
     /**
-     * word to find taken randomly in tableWord
+     * word to find
      */
+    // TODO (fix) this fields should be declared private
     private String wordToFind;
-
-    /**
-     * This is the initialization of the hidden word (table of character which compose the hidden word)
-     */
-    // TODO (fix) this field is not static (you must understand why)
-
 
     /**
      * Initialize : - begunHanged; - finishedHanged; - the score - the player's

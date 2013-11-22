@@ -1,5 +1,7 @@
 package fr.iutvalence.java.mp.hanged;
 
+import java.util.Random;
+
 
 /**
  * class Player which represent the player's identity (alias
@@ -43,6 +45,21 @@ public class Player
     public String getAlias()
     {
         return this.alias;
+    }
+    
+    /*-------------------------------------------------------------
+     *  OTHERS METHODS 
+     *-----------------------------------------------------------*/
+    
+    /**
+     * the player give a letter
+     * @return letterChosen
+     */
+    public char giveLetter()
+    {
+        Random r = new Random();
+        char letter = (char) ('A' + r.nextInt(26));
+        return letter;
     }
 
 }

@@ -55,4 +55,18 @@ public class WordLibrary
         // taken from the dictionary
         return this.wordToFind;
     }
+    
+    /**
+     * Display the hidden word
+     * @param tab
+     */
+    public void diplayHiddenWord(char tab[]){
+        
+        for (int i = 0; i < tab.length; i++)
+        {
+            tab[i] = '_';
+            System.out.print(tab[i] + " ");
+        }
+        System.out.println("");
+    }
 }

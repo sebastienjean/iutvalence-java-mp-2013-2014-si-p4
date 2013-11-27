@@ -1,6 +1,5 @@
 package fr.iutvalence.java.mp.hanged;
 
-import java.util.Random;
 
 /**
  * Represents a "Hanged" game

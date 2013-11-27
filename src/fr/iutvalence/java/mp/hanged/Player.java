@@ -57,7 +57,9 @@ public class Player
      */
     public char giveLetter()
     {
+        // TODO (fix) avoid using temp variables
         Random r = new Random();
+        // TODO (fix) declare hard-coded values as constants
         char letter = (char) ('A' + r.nextInt(26));
         return letter;
     }

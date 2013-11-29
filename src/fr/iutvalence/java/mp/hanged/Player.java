@@ -1,5 +1,5 @@
 package fr.iutvalence.java.mp.hanged;
-
+import java.util.Scanner;
 import java.util.Random;
 
 
@@ -19,6 +19,18 @@ public class Player
      * Player's alias typed at the beginning of the game
      */
     private String alias;
+    
+    /**
+     * letter taped by the player
+     */
+    private char letter;
+    Random r = new Random();
+    
+    /**
+     * letter number in the alphabet
+     */
+    private final static int nbAlpahbet = 26;
+
 
 
     /*-------------------------------------------------------------
@@ -57,11 +69,13 @@ public class Player
      */
     public char giveLetter()
     {
-        // TODO (fix) avoid using temp variables
-        Random r = new Random();
-        // TODO (fix) declare hard-coded values as constants
-        char letter = (char) ('A' + r.nextInt(26));
-        return letter;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Veuillez saisir une lettre :");
+        String str = sc.nextLine().toUpperCase();
+        this.letter = str.charAt(0);
+        
+//        this.letter = (char) ('A' + r.nextInt(nbAlpahbet));
+        return this.letter;
     }
 
 }

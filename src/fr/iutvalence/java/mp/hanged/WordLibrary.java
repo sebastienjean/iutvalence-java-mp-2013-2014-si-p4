@@ -18,13 +18,7 @@ public class WordLibrary
     /**
      * Table which contains a list of words
      */
-    private String[] wordLibrary = { "BONJOUR", "MERCI", "MANGER", "JOURNEE", "EXTRAORDINAIRE" };
-
-    // TODO (fix) this field is useless
-    /**
-     * word to find taken randomly in tableWord
-     */
-    private String wordToFind;
+    private String[] wordLibrary;
 
     /*-------------------------------------------------------------
      *  CONSTRUCTORS 
@@ -35,9 +29,7 @@ public class WordLibrary
      */
     public WordLibrary()
     {
-        Random r = new Random();
-      
-        this.wordToFind = this.wordLibrary[r.nextInt(5)];
+        this.wordLibrary = new String[] {"BONJOUR", "MERCI", "MANGER", "JOURNEE", "EXTRAORDINAIRE"};
     }
 
     /*-------------------------------------------------------------
@@ -53,7 +45,8 @@ public class WordLibrary
     {
         // TODO (fix) this method should return a word randomly
         // taken from the dictionary
-        return this.wordToFind;
+        Random r = new Random();
+        return this.wordLibrary[r.nextInt(5)];
     }
     
     /**

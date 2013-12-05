@@ -15,7 +15,7 @@ public class Hanged
     private int score;
 
     /**
-     * boolean which indicates if the galme is finished
+     * boolean which indicates if the game is finished
      */
     // TODO (fix) this fields should be declared private
     private boolean finishedHanged;
@@ -38,7 +38,7 @@ public class Hanged
     // TODO (fix) this fields should be declared private
     private String wordToFind;
 
-    private final static int nbErrorMax = 26;
+    private final static int nbErrorMax = 5;
 
     /**
      * Initialize : - begunHanged; - finishedHanged; - the score - the player's
@@ -47,16 +47,15 @@ public class Hanged
     public Hanged()
     {
         // Creation of the player
-        System.out.println("   Création d'un joueur...");
-        Player alias = new Player();
-        System.out.println("\t -->Le pseudo du joueur est " + alias.getAlias() + " !");
-        System.out.println();
+        new Display().displayPlayer();
 
 
         // Initialization of the wordToFind
         System.out.println("   Recherche du mot...");
         this.wordToFind =  new WordLibrary().getWordToFind();
         System.out.println("\t --> Le mot à trouver est : TROLOLOLOLOLOOOLOL" );
+        
+        //Window fen = new Window();
     }
     // TODO (fix) rewrite comment (this is not a constructor)
     /**
@@ -73,6 +72,9 @@ public class Hanged
 
 
         //filling and displaying of the hiddenWord
+        //WordLibrary.giveHiddenWord(this.wordToFind);
+        
+        
         System.out.print("Le mot caché est : ");
 
         for (int i = 0; i < this.wordToFind.length(); i++)
@@ -86,7 +88,7 @@ public class Hanged
 
         while(finishedHanged == false){
 
-            letter =  new Player().giveLetter();
+            letter =  new Display().giveLetter();
 
             System.out.println("La lettre proposee est : "+letter);
             for (int i = 0; i < this.wordToFind.length(); i++)
@@ -99,7 +101,7 @@ public class Hanged
 
             }
 
-            if ( typedLetter == false ) {
+            if (typedLetter == false) {
                 errorNumber++;
                 System.out.println("\t\t\t\tVous avez fait " + errorNumber + " erreurs");
                 //System.out.println(hiddenWord[i]);

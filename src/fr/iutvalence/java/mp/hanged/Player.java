@@ -1,6 +1,11 @@
 package fr.iutvalence.java.mp.hanged;
 import java.util.Scanner;
+import java.lang.Object;
+import java.io.Reader;
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
 import java.util.Random;
+import java.io.IOException;
 
 
 /**
@@ -20,10 +25,7 @@ public class Player
      */
     private String alias;
     
-    /**
-     * letter taped by the player
-     */
-    private char letter;
+
     Random r = new Random();
     
     /**
@@ -61,21 +63,27 @@ public class Player
     
     /*-------------------------------------------------------------
      *  OTHERS METHODS 
-     *-----------------------------------------------------------*/
+     *-----------------------------------------------------------*/    
     
-    /**
-     * the player give a letter
-     * @return letterChosen
-     */
-    public char giveLetter()
+    public void close(Scanner sc)
     {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Veuillez saisir une lettre :");
-        String str = sc.nextLine().toUpperCase();
-        this.letter = str.charAt(0);
-        
-//        this.letter = (char) ('A' + r.nextInt(nbAlpahbet));
-        return this.letter;
+        sc.close();
     }
+    
+    
+//    public char printUserParams()
+//
+//    {
+//        InputStreamReader isr = new InputStreamReader(System.in, "US-ASCII");
+//        BufferedReader br = new BufferedReader(isr);
+//        try
+//        {
+//            this.letter = br.readLine().charAt(0);
+//            isr.close();
+//            br.close();
+//            return this.letter;
+//        }catch (IOException e) {}
+//    }
 
+   
 }

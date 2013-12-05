@@ -62,4 +62,9 @@ public class WordLibrary
         }
         System.out.println("");
     }
+    
+    public void giveHiddenWord(String wordToFind){
+        
+        
+    }
 }

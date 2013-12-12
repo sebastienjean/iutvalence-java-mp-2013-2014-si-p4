@@ -11,60 +11,38 @@ import java.util.Random;
 public class WordLibrary
 {
 
-    /*-------------------------------------------------------------
-     *  ATRIBUTES 
-     *-----------------------------------------------------------*/
+	/*-------------------------------------------------------------
+	 *  ATRIBUTES
+	 *-----------------------------------------------------------*/
 
-    /**
-     * Table which contains a list of words
-     */
-    private String[] wordLibrary;
+	/**
+	 * Table which contains a list of words
+	 */
+	private final String[] wordLibrary;
 
-    /*-------------------------------------------------------------
-     *  CONSTRUCTORS 
-     *-----------------------------------------------------------*/
+	/*-------------------------------------------------------------
+	 *  CONSTRUCTORS
+	 *-----------------------------------------------------------*/
 
-    /**
-     * Method which reasearch the word to find
-     */
-    public WordLibrary()
-    {
-        this.wordLibrary = new String[] {"BONJOUR", "MERCI", "MANGER", "JOURNEE", "EXTRAORDINAIRE"};
-    }
+	/**
+	 * Method which initialize the library
+	 */
+	public WordLibrary()
+	{
+		this.wordLibrary = new String[] {"bonjour", "merci", "manger", "journee", "extraordinaire", "profit", "partage", "hexagone", "exister", "sablier"};
+	}
 
-    /*-------------------------------------------------------------
-     *  GETTERS 
-     *-----------------------------------------------------------*/
+	/*-------------------------------------------------------------
+	 *  GETTERS
+	 *-----------------------------------------------------------*/
 
-    /**
-     * This getter return the word to find
-     * 
-     * @return wordToFind
-     */
-    public String getWordToFind()
-    {
-        // TODO (fix) this method should return a word randomly
-        // taken from the dictionary
-        Random r = new Random();
-        return this.wordLibrary[r.nextInt(5)];
-    }
-    
-    /**
-     * Display the hidden word
-     * @param tab
-     */
-    public void diplayHiddenWord(char tab[]){
-        
-        for (int i = 0; i < tab.length; i++)
-        {
-            tab[i] = '_';
-            System.out.print(tab[i] + " ");
-        }
-        System.out.println("");
-    }
-    
-    public void giveHiddenWord(String wordToFind){
-        
-        
-    }
+	/**
+	 * This getter return the word to find
+	 * @return wordToFind
+	 */
+	public String getWordToFind()
+	{
+		Random r = new Random();
+		return this.wordLibrary[r.nextInt(this.wordLibrary.length)].toUpperCase();
+	}
 }

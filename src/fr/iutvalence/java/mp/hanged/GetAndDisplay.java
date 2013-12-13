@@ -102,7 +102,7 @@ public class GetAndDisplay {
 	public void newGame(){
 		try{
 			Scanner sc = new Scanner(System.in);
-			System.out.println("\n\nVoulez-vous rejouer ? (Si oui, tapez 'y' sinon tapez 'n')");
+			System.out.println("\n\nVoulez-vous jouer ? (Si oui, tapez 'y' sinon tapez 'n')");
 			char rep = sc.nextLine().charAt(0);
 			if (rep=='y')
 			{
@@ -111,11 +111,15 @@ public class GetAndDisplay {
 				System.out.println("|===========================================================|");
 				new Hanged().play();
 			}
-			else{
+			else if(rep=='n'){
 				System.out.println("FIN DU JEU !\nA bientôt !");
 			}
+			else{
+			    System.out.println("Veuillez taper un 'y' ou un 'n' !");
+			    newGame();
+			}
 		}catch (StringIndexOutOfBoundsException e){
-			System.out.println("Tapez 'y' ou 'n' !!");
+			System.out.println("ERREUR !");
 			newGame();
 		}
 	}

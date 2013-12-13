@@ -1,5 +1,10 @@
 package fr.iutvalence.java.mp.hanged;
 
+/**
+ * Class which determind 
+ * @author pascallo
+ *
+ */
 public class Score {
 
 	/*-------------------------------------------------------------

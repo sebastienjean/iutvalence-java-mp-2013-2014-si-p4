@@ -117,7 +117,7 @@ public class Hanged
 			if(this.finishedHanged==true){
 				System.out.println();
 				System.out.print("Vous avez gagné ! ");
-				new Score().Score(errorNumber, this.score);
+				new Score(errorNumber, this.score);
 				break;
 			}
 		}
